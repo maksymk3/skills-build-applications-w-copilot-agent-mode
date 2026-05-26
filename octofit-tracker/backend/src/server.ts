@@ -20,7 +20,6 @@ const apiUrl =
 
 connectDatabase().catch((err) => {
   console.error('MongoDB connection error:', err);
-  process.exit(1);
 });
 
 app.get('/api/health', (_req, res) => {

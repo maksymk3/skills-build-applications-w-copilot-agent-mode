@@ -6,6 +6,7 @@ export const getMongoUri = (): string => process.env.MONGODB_URI || defaultMongo
 
 export const connectDatabase = async (): Promise<void> => {
   mongoose.set('strictQuery', true);
+  mongoose.set('bufferCommands', false);
 
   const mongoUri = getMongoUri();
   await mongoose.connect(mongoUri);
